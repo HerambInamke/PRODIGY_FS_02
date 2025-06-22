@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function EmployeeForm({ initialData = {}, onSubmit, loading, submitLabel }) {
+export default function EmployeeForm({ initialData, onSubmit, loading, submitLabel }) {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -11,12 +11,13 @@ export default function EmployeeForm({ initialData = {}, onSubmit, loading, subm
   const [error, setError] = useState('');
 
   useEffect(() => {
+    const safeData = initialData || {};
     setForm({
-      name: initialData.name || '',
-      email: initialData.email || '',
-      position: initialData.position || '',
-      department: initialData.department || '',
-      salary: initialData.salary || ''
+      name: safeData.name || '',
+      email: safeData.email || '',
+      position: safeData.position || '',
+      department: safeData.department || '',
+      salary: safeData.salary || ''
     });
   }, [initialData]);
 

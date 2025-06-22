@@ -1,4 +1,6 @@
-@import "tailwindcss/preflight";
+@import "tailwindcss";
+
+/* @import "tailwindcss/preflight";
 @tailwind utilities;
 
 :root {
@@ -68,4 +70,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
