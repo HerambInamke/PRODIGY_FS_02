@@ -1,0 +1,46 @@
+### Admin Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+### Get All Employees
+GET http://localhost:5000/api/employees
+Authorization: Bearer {{JWT_TOKEN}}
+
+### Get Single Employee
+GET http://localhost:5000/api/employees/{{EMPLOYEE_ID}}
+Authorization: Bearer {{JWT_TOKEN}}
+
+### Create Employee
+POST http://localhost:5000/api/employees
+Content-Type: application/json
+Authorization: Bearer {{JWT_TOKEN}}
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "position": "Developer",
+  "department": "Engineering",
+  "salary": 70000
+}
+
+### Update Employee
+PUT http://localhost:5000/api/employees/{{EMPLOYEE_ID}}
+Content-Type: application/json
+Authorization: Bearer {{JWT_TOKEN}}
+
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "position": "Manager",
+  "department": "HR",
+  "salary": 80000
+}
+
+### Delete Employee
+DELETE http://localhost:5000/api/employees/{{EMPLOYEE_ID}}
+Authorization: Bearer {{JWT_TOKEN}} 
